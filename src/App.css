@@ -179,14 +179,14 @@ nav .container ul .nav-cart::after {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #000;
+  background-color: rgb(24, 67, 255);
   color: #fff;
   cursor: pointer;
 }
 .shoes-wrap .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 5%;
+  gap: 70px 5%;
 }
 .shoes-wrap .container .shoes-item {
   display: flex;
