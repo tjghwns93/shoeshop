@@ -61,13 +61,10 @@ function Cart (){
                 <div className="total">
                     <p>총 상품금액&emsp;{
                    a.cart.reduce((acc, product) => acc + product.count * product.price, 0).toLocaleString()
-                } 원</p>
-                <p>-</p>
-                <p>할인비용&emsp;0원</p>
-                <p>+</p>
-                <p>배송비&emsp;0원</p>
-                <p>=</p>
-                <p className="total-total">총 결제금액&emsp;{
+                } 원&emsp;</p>
+                <p>-&emsp;할인비용&emsp;0원&emsp;</p>
+                <p>+&emsp;배송비&emsp;0원&emsp;</p>
+                <p className="total-total">=&emsp;총 결제금액&emsp;{
                    a.cart.reduce((acc, product) => acc + product.count * product.price, 0).toLocaleString()
                 } 원</p>
                 </div>

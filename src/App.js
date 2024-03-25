@@ -13,6 +13,12 @@ function App() {
   const [shoes, setShoes] = useState(data);
   const [view, setView] = useState('');
   const [cartdot, setCartdot] = useState('');
+  const [nav, setNav] = useState('');
+  const [bar1, setBar1] = useState('');
+  const [bar2, setBar2] = useState('');
+  const [menuBtn, setMenuBtn] = useState(false);
+  const [menu, setMenu] = useState('');
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 901);
   const navigate = useNavigate();
   const a = useSelector((state)=>{ return state });
   let watched =  a.watched;
@@ -33,7 +39,7 @@ function App() {
     }, 0);
 
     setView(totalCount);
-  },[a.cart])
+  },[a.cart]);
 
   useEffect(()=>{
     if(a.cart.length == 0){
@@ -41,7 +47,28 @@ function App() {
     }else{
       setCartdot('nav-cart');
     }
-  },[a.cart])
+  },[a.cart]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 901);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(()=>{
+    if(menuBtn){
+      setBar1('bar1-on')
+      setBar2('bar2-on')
+      setMenu('menu-on')
+    }else{
+      setBar1('')
+      setBar2('')
+      setMenu('')
+    }
+  },[menuBtn])
  
 
   return (
@@ -49,9 +76,53 @@ function App() {
       <nav>
         <div className='container'>
           <ul>
-            <li><Link to={'/'} className='nav-item'><FontAwesomeIcon icon={faHouse} /></Link></li>
-            <li><Link className='nav-item'><input className='search-input'></input><FontAwesomeIcon icon={faSearch} /></Link></li>
-            <li><Link to={'/cart'} className={`nav-item ${cartdot}`}><FontAwesomeIcon icon={faShoppingBag} /></Link></li>
+            {
+              isMobile ? (
+                <>
+                <li><Link to={'/'} className='nav-item'><FontAwesomeIcon icon={faHouse} /></Link></li>
+                <li onClick={()=>{
+                   setNav('nav-search-on')
+                 }}><a className='nav-item'><FontAwesomeIcon icon={faSearch} /></a></li>
+                <li><Link to={'/cart'} className={`nav-item ${cartdot}`}><FontAwesomeIcon icon={faShoppingBag} /></Link></li>
+                <li className='nav-item bar' onClick={()=>{
+                  setMenuBtn(!menuBtn);
+                }}>
+                  <div className={`bar1 ${bar1}`}></div>
+                  <div className={`bar2 ${bar2}`}></div>
+                </li>
+            </>
+              ) : (
+                <>
+                <li><Link to={'/'} className='nav-item'><FontAwesomeIcon icon={faHouse} /></Link></li>
+                <li><a href='#best' className='nav-item'>Men</a></li>
+                <li><a href='#best' className='nav-item'>Women</a></li>
+                <li><a href='#best' className='nav-item'>Kids</a></li>
+                <li><a href='#best' className='nav-item'>Best</a></li>
+                <li><a href='#best' className='nav-item'>New</a></li>
+                <li><a href='#best' className='nav-item'>Event</a></li>
+                <li onClick={()=>{
+                   setNav('nav-search-on')
+                 }}><a className='nav-item'><FontAwesomeIcon icon={faSearch} /></a></li>
+                <li><Link to={'/cart'} className={`nav-item ${cartdot}`}><FontAwesomeIcon icon={faShoppingBag} /></Link></li>
+                </>
+              )
+            }
+            
+          </ul>
+        </div>
+        <div className={`nav-search ${nav}`} onMouseLeave={()=>{setNav('')}}>
+          <div className='container'>
+          <FontAwesomeIcon icon={faSearch} /><input placeholder='shoeshop.com 검색하기'></input>
+          </div>
+        </div>
+        <div className={`nav-menu ${menu}`} onMouseLeave={()=>{setMenu('')}}>
+          <ul>
+            <li>스토어</li>
+            <li>MEN</li>
+            <li>WOMEN</li>
+            <li>KIDS</li>
+            <li>BEST</li>
+            <li>NEW</li>
           </ul>
         </div>
       </nav>

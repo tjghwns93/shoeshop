@@ -58,12 +58,13 @@ nav .container {
 nav .container ul {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 nav .container ul .nav-item {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.8);
   transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+  cursor: pointer;
 }
 nav .container ul .nav-item:hover {
   color: #fff;
@@ -92,6 +93,80 @@ nav .container ul .nav-cart::after {
   background-color: red;
   border-radius: 50%;
 }
+nav .container ul .bar {
+  width: 22px;
+  height: 22px;
+  position: relative;
+}
+nav .container ul .bar .bar1 {
+  position: absolute;
+  top: 6px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+nav .container ul .bar .bar1-on {
+  top: 12px;
+  width: 90%;
+  transform: rotate(45deg);
+}
+nav .container ul .bar .bar2 {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+nav .container ul .bar .bar2-on {
+  bottom: 8px;
+  width: 90%;
+  transform: rotate(-45deg);
+}
+nav .nav-search {
+  height: 360px;
+  padding-top: 100px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  background: #161617;
+  z-index: -1;
+  color: #fff;
+  transform: translateY(-150%);
+  transition: transform 1s;
+}
+nav .nav-search .container .svg-inline--fa {
+  font-size: 18px;
+}
+nav .nav-search .container input {
+  font-size: 24px;
+  padding: 0 10px;
+  border: none;
+  outline: none;
+  background: none;
+  color: #fff;
+}
+nav .nav-search-on {
+  transform: translateY(0);
+}
+nav .nav-menu {
+  position: absolute;
+  height: 110vh;
+  left: 0;
+  right: 0;
+  background: #161617;
+  z-index: -1;
+  color: #fff;
+  transform: translateY(-130%);
+  transition: transform 1s;
+  font-size: 50px;
+  padding: 80px 40px;
+}
+nav .menu-on {
+  transform: translateY(-5%);
+}
 
 .watched-wrap {
   position: fixed;
@@ -100,7 +175,7 @@ nav .container ul .nav-cart::after {
   background-color: white;
   border: 0.3px solid black;
   width: 90px;
-  z-index: 100;
+  z-index: 200;
   text-align: center;
   font-size: 12px;
 }
@@ -244,6 +319,9 @@ nav .container ul .nav-cart::after {
   padding: 28px 0;
   box-shadow: inset 0 -1px 0 0 #e5e5e5;
 }
+.detail-wrap .container .detail-content .content-info li h3 {
+  cursor: pointer;
+}
 .detail-wrap .container .detail-content .content-info li div {
   padding: 28px 0;
 }
@@ -345,10 +423,15 @@ nav .container ul .nav-cart::after {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 30px;
   margin: 20px 0;
   padding: 40px 60px 40px 50px;
   border: 3px solid #494949;
   font-weight: bold;
+}
+.cart-wrap .container .total p {
+  font-size: 16px;
 }
 .cart-wrap .container .total .total-total {
   font-size: 20px;
@@ -447,4 +530,51 @@ nav .container ul .nav-cart::after {
 }
 .footer .footer_bottom span {
   padding: 8px;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 570px) {
+  nav .container ul {
+    justify-content: space-evenly;
+  }
+  .watched-wrap {
+    width: 70px;
+  }
+  .ad-wrap .ad-content h2 {
+    font-size: 42px;
+  }
+  .ad-wrap .ad-content span {
+    font-size: 11px;
+  }
+  .ad-wrap .ad-content a {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+  .cart-wrap .container .cart-table .table p {
+    font-size: 12px;
+  }
+  .cart-wrap .container h3 {
+    font-size: 40px;
+  }
+  .cart-wrap .container .total {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .cart-wrap .container .total p {
+    font-size: 14px;
+  }
+  .cart-wrap .container .total .total-total {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 571px) and (max-width: 900px) {
+  nav .container ul {
+    justify-content: space-evenly;
+  }
+  .cart-wrap .container .cart-table .table p {
+    font-size: 14px;
+  }
+  .cart-wrap .container .total {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=App.css.map */
