@@ -115,7 +115,7 @@ function App() {
           <FontAwesomeIcon icon={faSearch} /><input placeholder='shoeshop.com 검색하기'></input>
           </div>
         </div>
-        <div className={`nav-menu ${menu}`} onMouseLeave={()=>{setMenu('')}}>
+        <div className={`nav-menu ${menu}`}>
           <ul>
             <li>스토어</li>
             <li>MEN</li>
