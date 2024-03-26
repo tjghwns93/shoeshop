@@ -202,7 +202,7 @@ nav .menu-on {
   align-items: center;
   justify-content: center;
   background-size: cover;
-  height: 45vw;
+  height: 40vw;
   color: #fff;
   font-weight: bold;
 }
@@ -229,7 +229,7 @@ nav .menu-on {
 }
 
 .nike {
-  margin-top: 78px;
+  margin: 78px 0 0;
   background: url(https://github.com/tjghwns93/images/blob/main/iu.jpeg?raw=true) center no-repeat;
 }
 

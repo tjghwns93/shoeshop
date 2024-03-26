@@ -16,6 +16,7 @@ function Home(props){
             <a href="#best">구매하기</a>
          </div>
         </div>
+        
        <div className='ad-wrap adidas'>
           <div className='ad-content'>
               <h2>YOU GOT THIS</h2>
