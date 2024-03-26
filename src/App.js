@@ -79,7 +79,7 @@ function App() {
             {
               isMobile ? (
                 <>
-                <li><Link to={'/'} className='nav-item'><FontAwesomeIcon icon={faHouse} /></Link></li>
+                <li><Link to={'/'} className='nav-item'><div className='logo'><img src='https://github.com/tjghwns93/images/blob/main/nblogo.png?raw=true'/></div></Link></li>
                 <li onClick={()=>{
                    setNav('nav-search-on')
                  }}><a className='nav-item'><FontAwesomeIcon icon={faSearch} /></a></li>
@@ -93,13 +93,13 @@ function App() {
             </>
               ) : (
                 <>
-                <li><Link to={'/'} className='nav-item'><FontAwesomeIcon icon={faHouse} /></Link></li>
-                <li><a href='#best' className='nav-item'>Men</a></li>
-                <li><a href='#best' className='nav-item'>Women</a></li>
-                <li><a href='#best' className='nav-item'>Kids</a></li>
-                <li><a href='#best' className='nav-item'>Best</a></li>
-                <li><a href='#best' className='nav-item'>New</a></li>
-                <li><a href='#best' className='nav-item'>Event</a></li>
+                <li><Link to={'/'} className='nav-item'><div className='logo'><img src='https://github.com/tjghwns93/images/blob/main/nblogo.png?raw=true'/></div></Link></li>
+                <li><a className='nav-item'>Men</a></li>
+                <li><a className='nav-item'>Women</a></li>
+                <li><a className='nav-item'>Kids</a></li>
+                <li><a className='nav-item'>Best</a></li>
+                <li><a className='nav-item'>New</a></li>
+                <li><a className='nav-item'>Event</a></li>
                 <li onClick={()=>{
                    setNav('nav-search-on')
                  }}><a className='nav-item'><FontAwesomeIcon icon={faSearch} /></a></li>
@@ -157,7 +157,7 @@ function App() {
           <ul>
             <li className='footer_strong'><a to='#'>멤버가입</a></li>
             <li className='footer_strong'><a to='#'>매장찾기</a></li>
-            <li className='footer_strong'><a to='#'>나이키 저널</a></li>
+            <li className='footer_strong'><a to='#'>NB 저널</a></li>
           </ul>
           <ul>
             <li className='footer_strong'><a to='#'>고객센터</a></li>
@@ -169,7 +169,7 @@ function App() {
           </ul>
           <ul>
             <li className='footer_strong'><a to='#'>회사소개</a></li>
-            <li><a to='#'>About Nike</a></li>
+            <li><a to='#'>About NB</a></li>
             <li><a to='#'>소식</a></li>
             <li><a to='#'>채용</a></li>
             <li><a to='#'>투자자</a></li>

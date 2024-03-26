@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 html {
   scroll-behavior: smooth;
 }
@@ -46,7 +47,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  padding: 10px 0;
+  padding: 5px 0;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
           backdrop-filter: saturate(180%) blur(20px);
   background: rgba(22, 22, 23, 0.8);
@@ -68,6 +69,10 @@ nav .container ul .nav-item {
 }
 nav .container ul .nav-item:hover {
   color: #fff;
+}
+nav .container ul .nav-item .logo {
+  width: 30px;
+  padding-top: 10px;
 }
 nav .container ul .nav-item .search-input {
   padding: 3px 16px;
@@ -197,25 +202,35 @@ nav .menu-on {
 }
 
 .ad-wrap {
+  position: relative;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-size: cover;
   height: 40vw;
-  color: #fff;
+  color: #000;
   font-weight: bold;
+  margin: 78px 0 25px;
+  overflow: hidden;
 }
 .ad-wrap .ad-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  transition: transform 1s;
   display: flex;
   flex-direction: column;
   align-items: center;
+  pointer-events: none;
 }
 .ad-wrap .ad-content h2 {
   font-size: 50px;
+  transition: transform 1s;
 }
 .ad-wrap .ad-content span {
+  display: block;
   font-size: 15px;
+  transition: transform 1s;
 }
 .ad-wrap .ad-content a {
   padding: 11px 21px;
@@ -225,17 +240,45 @@ nav .menu-on {
   border-radius: 50px;
   font-size: 17px;
   font-weight: bold;
-  margin-top: 40px;
+  margin-top: 15px;
+  pointer-events: all;
 }
 
-.nike {
-  margin: 78px 0 0;
-  background: url(https://github.com/tjghwns93/images/blob/main/iu.jpeg?raw=true) center no-repeat;
+.iu .ad-content {
+  transform: translate(-250%, -50%);
+}
+
+.yeona .ad-content {
+  transform: translate(-50%, -500px);
+}
+
+.nike .ad-content {
+  transform: translate(25%, 350px);
+}
+
+.swiper-slide-active .ad-wrap.iu .ad-content {
+  transform: translate(20%, -50%);
+}
+.swiper-slide-active .ad-wrap.yeona .ad-content {
+  transform: translate(-50%, -50%);
+}
+.swiper-slide-active .ad-wrap.nike .ad-content {
+  transform: translate(25%, -106%);
+}
+
+.swiper-pagination {
+  bottom: 3px !important;
+}
+.swiper-pagination .swiper-pagination-bullet {
+  margin: 0 7px !important;
+}
+.swiper-pagination .swiper-pagination-bullet-active {
+  background: #1843ff;
 }
 
 .adidas {
-  margin: 15px 0;
-  background: url(https://raw.githubusercontent.com/tjghwns93/images/main/adidas.avif) center no-repeat;
+  color: #fff;
+  margin: 25px 0;
 }
 
 .shoes-wrap {
@@ -244,9 +287,10 @@ nav .menu-on {
   padding: 90px 0 50px;
 }
 .shoes-wrap h3 {
-  font-size: 58px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 70px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 .shoes-wrap button {
   display: block;
@@ -269,6 +313,40 @@ nav .menu-on {
   row-gap: 10px;
   cursor: pointer;
   width: 30%;
+}
+
+.card-wrap {
+  width: 100%;
+  padding: 100px 0;
+}
+.card-wrap h2 {
+  font-size: 70px;
+  font-family: "Bebas Neue", sans-serif;
+  margin-left: 7.5%;
+  margin-bottom: 30px;
+}
+.card-wrap .container {
+  display: flex;
+  justify-content: space-between;
+}
+.card-wrap .container .card {
+  width: 30%;
+}
+.card-wrap .container .card h3 {
+  margin-top: 10px;
+  font-size: 24px;
+}
+.card-wrap .container .card p {
+  margin: 15px 0;
+  height: 50px;
+}
+.card-wrap .container .card button {
+  border: none;
+  background: #000;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 7px;
+  cursor: pointer;
 }
 
 .detail-wrap {
@@ -540,7 +618,7 @@ nav .menu-on {
     width: 70px;
   }
   .ad-wrap .ad-content h2 {
-    font-size: 42px;
+    font-size: 22px;
   }
   .ad-wrap .ad-content span {
     font-size: 11px;
@@ -548,6 +626,22 @@ nav .menu-on {
   .ad-wrap .ad-content a {
     font-size: 12px;
     margin-top: 20px;
+  }
+  .card-wrap .container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 70px;
+  }
+  .card-wrap .container .card {
+    width: 100%;
+  }
+  .card-wrap .container .card h3 {
+    font-size: 20px;
+  }
+  .card-wrap .container .card p {
+    margin: 5px 0;
+    font-size: 12px;
   }
   .cart-wrap .container .cart-table .table p {
     font-size: 12px;
@@ -569,6 +663,17 @@ nav .menu-on {
 @media only screen and (min-width: 571px) and (max-width: 900px) {
   nav .container ul {
     justify-content: space-evenly;
+  }
+  .ad-wrap .ad-content h2 {
+    font-size: 34px;
+  }
+  .card-wrap .container {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 70px;
+  }
+  .card-wrap .container .card {
+    width: 45%;
   }
   .cart-wrap .container .cart-table .table p {
     font-size: 14px;

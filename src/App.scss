@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+// font-family: "Bebas Neue", sans-serif;
 
 ///////// reset ///////
 html {
@@ -52,7 +55,7 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    padding: 10px 0;
+    padding: 5px 0;
     backdrop-filter: saturate(180%) blur(20px);
     background: rgba(22, 22, 23, 0.8);
     z-index: 9999;
@@ -73,6 +76,11 @@ nav {
 
                 &:hover {
                     color: #fff;
+                }
+
+                .logo {
+                    width: 30px;
+                    padding-top: 10px;
                 }
 
                 .search-input {
@@ -234,26 +242,39 @@ nav {
 //////////////// home-ad ///////////////
 
 .ad-wrap {
+    position: relative;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-size: cover;
     height: 40vw;
-    color: #fff;
+    color: #000;
     font-weight: bold;
+    margin: 78px 0 25px;
+    overflow: hidden;
+
 
     .ad-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        transition: transform 1s;
         display: flex;
         flex-direction: column;
         align-items: center;
+        pointer-events: none;
 
         h2 {
             font-size: 50px;
+            transition: transform 1s;
+
         }
 
         span {
+            display: block;
             font-size: 15px;
+            transition: transform 1s;
+
         }
 
         a {
@@ -264,19 +285,69 @@ nav {
             border-radius: 50px;
             font-size: 17px;
             font-weight: bold;
-            margin-top: 40px;
+            margin-top: 15px;
+            pointer-events: all;
         }
     }
 }
 
+.iu {
+
+    .ad-content {
+        transform: translate(-250%, -50%);
+    }
+}
+
+.yeona {
+
+    .ad-content {
+        transform: translate(-50%, -500px);
+    }
+}
+
 .nike {
-    margin: 78px 0 0;
-    background: url(https://github.com/tjghwns93/images/blob/main/iu.jpeg?raw=true)center no-repeat;
+
+    .ad-content {
+        transform: translate(25%, 350px);
+    }
+
+}
+
+.swiper-slide-active {
+    .ad-wrap.iu {
+        .ad-content {
+            transform: translate(20%, -50%);
+        }
+    }
+
+    .ad-wrap.yeona {
+        .ad-content {
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .ad-wrap.nike {
+        .ad-content {
+            transform: translate(25%, -106%);
+        }
+    }
+}
+
+.swiper-pagination {
+    bottom: 3px !important;
+
+    .swiper-pagination-bullet {
+        margin: 0 7px !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #1843ff;
+    }
 }
 
 .adidas {
-    margin: 15px 0;
-    background: url(https://raw.githubusercontent.com/tjghwns93/images/main/adidas.avif)center no-repeat;
+    color: #fff;
+    margin: 25px 0;
 }
 
 //////////// home-shoes /////////////////
@@ -287,9 +358,10 @@ nav {
     padding: 90px 0 50px;
 
     h3 {
-        font-size: 58px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 70px;
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
 
     button {
@@ -314,6 +386,50 @@ nav {
             row-gap: 10px;
             cursor: pointer;
             width: 30%;
+        }
+    }
+}
+
+///////////////////////// card ////////////////////
+
+
+.card-wrap {
+    width: 100%;
+    padding: 100px 0;
+
+    h2 {
+        font-size: 70px;
+        font-family: "Bebas Neue", sans-serif;
+        margin-left: 7.5%;
+        margin-bottom: 30px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+
+        .card {
+            width: 30%;
+
+            h3 {
+                margin-top: 10px;
+                font-size: 24px;
+            }
+
+            p {
+                margin: 15px 0;
+                height: 50px;
+            }
+
+            button {
+                border: none;
+                background: #000;
+                color: #fff;
+                padding: 10px 15px;
+                border-radius: 7px;
+                cursor: pointer;
+            }
+
         }
     }
 }
@@ -666,7 +782,7 @@ nav {
     .ad-wrap .ad-content {
 
         h2 {
-            font-size: 42px;
+            font-size: 22px;
         }
 
         span {
@@ -679,6 +795,25 @@ nav {
         }
     }
 
+    .card-wrap .container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 70px;
+
+        .card {
+            width: 100%;
+
+            h3 {
+                font-size: 20px;
+            }
+
+            p {
+                margin: 5px 0;
+                font-size: 12px;
+            }
+        }
+    }
 
     .cart-wrap .container {
 
@@ -709,6 +844,21 @@ nav {
 
     nav .container ul {
         justify-content: space-evenly;
+    }
+
+
+    .ad-wrap .ad-content h2 {
+        font-size: 34px;
+    }
+
+    .card-wrap .container {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 70px;
+
+        .card {
+            width: 45%;
+        }
     }
 
     .cart-wrap .container .cart-table .table p {
