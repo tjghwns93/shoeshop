@@ -10,7 +10,7 @@
 
 ---
 
-![shoeshop](https://github.com/tjghwns93/images/blob/main/shoeshop.png?raw=true)
+![shoeshop](https://github.com/tjghwns93/images/blob/main/newbalance2.png?raw=true)
 
 ![shoeshop](https://github.com/tjghwns93/images/blob/main/shoeshop4.png?raw=true)
 ![shoeshop](https://github.com/tjghwns93/images/blob/main/shoeshop3.png?raw=true)
