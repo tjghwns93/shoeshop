@@ -366,9 +366,9 @@ nav .menu-on {
 
 .detail-wrap {
   padding-top: 130px;
-  position: relative;
 }
 .detail-wrap .container {
+  width: 95%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -376,9 +376,7 @@ nav .menu-on {
   margin-bottom: 50px;
 }
 .detail-wrap .container .ditail-img {
-  position: sticky;
-  top: 20px;
-  width: 600px;
+  width: 670px;
   height: 392px;
   z-index: 100;
 }

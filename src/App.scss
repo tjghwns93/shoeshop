@@ -460,10 +460,10 @@ nav {
 
 .detail-wrap {
     padding-top: 130px;
-    position: relative;
 
 
     .container {
+        width: 95%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -471,9 +471,7 @@ nav {
         margin-bottom: 50px;
 
         .ditail-img {
-            position: sticky;
-            top: 20px;
-            width: 600px;
+            width: 670px;
             height: 392px;
             z-index: 100;
         }
