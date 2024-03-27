@@ -43,10 +43,7 @@ ol {
 }
 
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   padding: 5px 0;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
           backdrop-filter: saturate(180%) blur(20px);
@@ -319,6 +316,12 @@ nav .menu-on {
   row-gap: 10px;
   cursor: pointer;
   width: 30%;
+}
+.shoes-wrap .container .shoes-item img {
+  transition: 0.3s;
+}
+.shoes-wrap .container .shoes-item img:hover {
+  box-shadow: 1px 1px 5px 2px rgba(0, 23, 77, 0.5);
 }
 
 .card-wrap {
