@@ -1,4 +1,4 @@
-# React 쇼핑몰
+# React 쇼핑몰(개인프로젝트)
 
 
 ### useState와 useEffect 훅을 적극 사용하여, 동적인 사용자 인터페이스를 구현하였고 
